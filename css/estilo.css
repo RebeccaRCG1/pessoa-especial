@@ -7,34 +7,34 @@ body {
   padding: 30px;
   position: relative;
   overflow: hidden;
+  color: #fff;
 }
 
-h1 {
-  color: rgb(255, 240, 248);
-  font-size: 48px;
+/* Texto com leve sombra e fade-in */
+.fade-text {
+  font-size: 28px;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 0.5s;
 }
 
-p {
-  font-size: 20px;
+.fade-text:nth-of-type(2) { animation-delay: 1.5s; }
+.fade-text:nth-of-type(3) { animation-delay: 2.5s; }
+
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
 
-button {
-  padding: 12px 20px;
-  font-size: 18px;
-  background-color: #ff4d6d;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
+/* Fundo animado */
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-.heart-container {
+/* Contêiner de corações */
+.heart-container, .particle-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -44,6 +44,7 @@ button {
   overflow: hidden;
 }
 
+/* Corações grandes */
 .heart {
   position: absolute;
   width: 20px;
@@ -63,17 +64,25 @@ button {
   border-radius: 50%;
 }
 
-.heart::before {
-  top: -10px;
-  left: 0;
-}
-
-.heart::after {
-  top: 0;
-  left: 10px;
-}
+.heart::before { top: -10px; left: 0; }
+.heart::after { top: 0; left: 10px; }
 
 @keyframes floatUp {
   0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
   100% { transform: translateY(-700px) rotate(-45deg); opacity: 0; }
+}
+
+/* Mini partículas brilhantes */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  animation: particleFloat 6s linear infinite;
+}
+
+@keyframes particleFloat {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-600px); opacity: 0; }
 }
