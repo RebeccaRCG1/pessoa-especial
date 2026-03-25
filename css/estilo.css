@@ -1,13 +1,89 @@
+/* Fonte elegante e fundo animado */
 body {
-  background-color: rgba(0, 102, 255, 0.295); /*Pode escolher outra cor se quiser*/
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+  background: linear-gradient(-45deg, rgba(0,102,255,0.3), #fbc2eb, #a6c1ee, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
 }
 
 h1 {
-  color: rgb(255, 240, 248); /*Pode escolher outra cor se quiser*/
-  text-align: center;
+  color: rgb(255, 240, 248);
+  font-size: 48px;
 }
 
 p {
-  font-family: verdana;
   font-size: 20px;
+}
+
+/* Botão estilizado */
+button {
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #ff4d6d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Gradiente animado */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Corações animados */
+.heart-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(-45deg);
+  animation: floatUp 5s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 10px;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-700px) rotate(-45deg);
+    opacity: 0;
+  }
 }
