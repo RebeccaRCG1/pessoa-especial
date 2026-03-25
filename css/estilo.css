@@ -7,13 +7,13 @@ body {
   padding: 30px;
   position: relative;
   overflow: hidden;
-  color: #fff;
+  color: #000;  /* Letras em preto */
 }
 
-/* Texto com leve sombra e fade-in */
+/* Texto com sombra e fade-in */
 .fade-text {
   font-size: 28px;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
   opacity: 0;
   animation: fadeIn 2s forwards;
   animation-delay: 0.5s;
@@ -33,7 +33,7 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Contêiner de corações */
+/* Contêineres para corações e partículas */
 .heart-container, .particle-container {
   position: absolute;
   top: 0;
